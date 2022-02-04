@@ -11,7 +11,7 @@ resource "azurerm_virtual_network" "vnet" {
 }
 
 module "private_dns" {
-  source              = "../../terraform-azurerm-private-dns-zone"
+  source              = "./module"
   name                = "${azurerm_resource_group.rg.name}.com"
   resource_group_name = azurerm_resource_group.rg.name
   a_records = [
