@@ -1,5 +1,5 @@
 {
-    "name": "aztfm-application-gateway",
+    "name": "aztfm-private-dns-zone",
     "image": "mcr.microsoft.com/devcontainers/base:jammy",
     "features": {
         "ghcr.io/devcontainers/features/terraform:1": {
