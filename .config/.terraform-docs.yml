@@ -1,0 +1,73 @@
+formatter: markdown
+
+settings:
+  anchor: false
+  html: false
+
+sort:
+  enabled: false
+
+output:
+  file: README.md
+  mode: inject
+
+content: |
+  {{ define "table" }}{{ printf "The `%s` supports the following:" .Resource }}
+
+  | Name | Description | Type | Default | Required |
+  | ---- | ------------| :--: | :-----: | :------: |
+  {{ range include .File | fromJson -}}
+    {{ print "|" (.Name | sanitizeMarkdownTbl) -}}
+    {{ $z := len .Support }}{{ if ne $z 0 }}{{ print "|" .Description -}}
+      {{ range $x, $y := .Support -}}
+        {{ if eq $x (sub $z 1) }}{{ printf " `%s`." . -}}
+        {{ else if eq $x (sub $z 2) }}{{ printf " `%s` and" . -}}
+        {{ else }}{{ printf " `%s`," . }}{{ end -}}
+      {{ end -}}
+    {{ else }}{{ print "|" .Description }}{{ end -}}
+    {{ printf "|`%s`" .Type -}}
+    {{ if eq .Default "n/a" }}{{ print "|" (.Default | sanitizeMarkdownTbl) -}}
+    {{ else }}{{ printf "|`%s`" .Default }}{{ end -}}
+    {{ printf "|%s|" .Required }}
+  {{ end }}{{ end -}}
+
+  ## Parameters
+
+  The following parameters are supported:
+
+  | Name | Description | Type | Default | Required |
+  | ---- | ----------- | :--: | :-----: | :------: |
+  {{ range .Module.Inputs -}}
+    {{ print "|" (.Name | sanitizeMarkdownTbl) -}}
+    {{ print "|" (toString .Description | sanitizeMarkdownTbl) -}}
+    {{ if eq (substr 0 13 (toString .Type)) "list(object({" }}{{ print "|`list(object({}))`" -}}
+    {{ else if eq (substr 0 8 (toString .Type)) "object({" }}{{ print "|`object({})`" -}}
+    {{ else }}{{ printf "|`%s`" .Type }}{{ end -}}
+    {{ if eq .GetValue "" }}{{ print "|" (.GetValue | sanitizeMarkdownTbl) -}}
+    {{ else }}{{ printf "|`%s`" .GetValue }}{{ end -}}
+    {{ print "|" (ternary .Required "yes" "no") "|" }}
+  {{ end }}{{ printf "\n" -}}
+
+  {{ template "table" dict "Resource" "soa_record" "File" ".config/soa_record_parameters.json" }}
+  {{ template "table" dict "Resource" "a_records" "File" ".config/a_record_parameters.json" }}
+  {{ template "table" dict "Resource" "aaaa_records" "File" ".config/aaaa_record_parameters.json" }}
+  {{ template "table" dict "Resource" "cname_records" "File" ".config/cname_record_parameters.json" }}
+  {{ template "table" dict "Resource" "mx_records" "File" ".config/mx_record_parameters.json" }}
+  {{ template "table" dict "Resource" "mx_records.records" "File" ".config/mx_records_record_parameters.json" }}
+  {{ template "table" dict "Resource" "ptr_records" "File" ".config/ptr_record_parameters.json" }}
+  {{ template "table" dict "Resource" "srv_records" "File" ".config/srv_record_parameters.json" }}
+  {{ template "table" dict "Resource" "srv_records.records" "File" ".config/srv_records_record_parameters.json" }}
+  {{ template "table" dict "Resource" "txt_records" "File" ".config/txt_record_parameters.json" }}
+  {{ template "table" dict "Resource" "virtual_network_links" "File" ".config/virtual_network_link_parameters.json" }}{{ printf "\n" -}}
+
+  ## Outputs
+
+  The following outputs are exported:
+
+  | Name | Description | Sensitive |
+  | ---- | ------------| :-------: |
+  {{ range .Module.Outputs -}}
+    {{ print "|" .Name -}}
+    {{ print "|" (toString .Description | sanitizeMarkdownTbl) -}}
+    {{ print "|" (ternary .Sensitive "yes" "no") "|" }}
+  {{ end -}}
