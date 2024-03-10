@@ -1,1 +1,34 @@
-[]
+[
+    {
+        "Name": "priority",
+        "Description": "",
+        "Type": "number",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "weight",
+        "Description": "",
+        "Type": "number",
+        "Default": "n/a",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "port",
+        "Description": "",
+        "Type": "number",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "target",
+        "Description": "",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    }
+]

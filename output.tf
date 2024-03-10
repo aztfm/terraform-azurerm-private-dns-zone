@@ -13,6 +13,11 @@ output "resource_group_name" {
   description = "The name of the resource group in which to create the Private DNS zone."
 }
 
+output "tags" {
+  value       = azurerm_private_dns_zone.dns.tags
+  description = "The tags assigned to the resource."
+}
+
 output "number_of_record_sets" {
   value       = azurerm_private_dns_zone.dns.number_of_record_sets
   description = "The current number of record sets in this Private DNS zone."
@@ -33,54 +38,9 @@ output "max_number_of_virtual_network_links_with_registration" {
   description = "The maximum number of virtual networks that can be linked to this Private DNS zone with registration enabled."
 }
 
-output "soa_record_fqdn" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].fqdn
-  description = "The fqdn for the SOA record."
-}
-
-output "soa_record_email" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].email
-  description = "The email contact for the SOA record."
-}
-
-output "soa_record_host_name" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].host_name
-  description = "The host name for the SOA record."
-}
-
-output "soa_record_refresh_time" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].refresh_time
-  description = "The refresh time for the SOA record."
-}
-
-output "soa_record_retry_time" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].retry_time
-  description = "The retry time for the SOA record."
-}
-
-output "soa_record_expire_time" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].expire_time
-  description = "The expire time for the SOA record."
-}
-
-output "soa_record_ttl" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].ttl
-  description = "The Time To Live of the SOA Record in seconds."
-}
-
-output "soa_record_minimum_ttl" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].minimum_ttl
-  description = "The minimum Time To Live for the SOA record. By convention, it is used to determine the negative caching duration."
-}
-
-output "soa_record_serial_number" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].serial_number
-  description = "The serical number for the SOA record."
-}
-
-output "soa_record_tags" {
-  value       = azurerm_private_dns_zone.dns.soa_record[0].tags
-  description = "The tags of the SOA record."
+output "soa_record" {
+  value       = azurerm_private_dns_zone.dns.soa_record
+  description = "Block containing configuration of SOA record."
 }
 
 output "a_records" {
@@ -123,15 +83,4 @@ output "txt_records" {
   value       = { for txt_record in azurerm_private_dns_txt_record.txt_records : txt_record.name => txt_record }
   description = "Blocks containing configuration of each TXT record."
   # module.MODULE_NAME.txt_records["TXT_RECORD_NAME"].id
-}
-
-output "TEXT" {
-  value       = azurerm_private_dns_zone_virtual_network_link.private_links #{ for private_link in azurerm_private_dns_zone_virtual_network_link.private_links : private_link.name => private_link }
-  description = ""
-  # module.MODULE_NAME.subnets["SUBNET_NAME"].id
-}
-
-output "tags" {
-  value       = azurerm_private_dns_zone.dns.tags
-  description = "The tags assigned to the resource."
 }

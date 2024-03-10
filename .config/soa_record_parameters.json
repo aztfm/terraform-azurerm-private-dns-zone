@@ -1,1 +1,58 @@
-[]
+[
+    {
+        "Name": "email",
+        "Description": "",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "tags",
+        "Description": "",
+        "Type": "map(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "expire_time",
+        "Description": "",
+        "Type": "number",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "minimum_ttl",
+        "Description": "",
+        "Type": "number",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "refresh_time",
+        "Description": "",
+        "Type": "number",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "retry_time",
+        "Description": "",
+        "Type": "number",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "ttl",
+        "Description": "",
+        "Type": "number",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    }
+]
