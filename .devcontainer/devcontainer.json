@@ -2,6 +2,9 @@
     "name": "aztfm-private-dns-zone",
     "image": "mcr.microsoft.com/devcontainers/base:jammy",
     "features": {
+        "ghcr.io/devcontainers/features/azure-cli:1": {
+            "version": "latest"
+        },
         "ghcr.io/devcontainers/features/terraform:1": {
             "installTerraformDocs": true,
             "version": "latest",
@@ -48,6 +51,9 @@
                 },
                 "[terraform]": {
                     "editor.defaultFormatter": "hashicorp.terraform"
+                },
+                "[yaml]": {
+                    "editor.defaultFormatter": "redhat.vscode-yaml"
                 }
             }
         }
