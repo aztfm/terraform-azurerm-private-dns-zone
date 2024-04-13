@@ -1,4 +1,5 @@
-<!-- markdownlint-disable MD041 MD013 -->
+<!-- markdownlint-disable MD041 -->
+
 ## 1.0.0 (XXXXXX ##, 2024)
 
 FEATURES:
