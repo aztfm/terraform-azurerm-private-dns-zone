@@ -52,10 +52,10 @@ variable "aaaa_records" {
 
 variable "cname_records" {
   type = list(object({
-    name    = string
-    tags    = optional(map(string))
-    ttl     = number
-    records = string
+    name   = string
+    tags   = optional(map(string))
+    ttl    = number
+    record = string
   }))
   default     = []
   description = "Enables you to manage DNS CNAME Records within Azure Private DNS."

@@ -1,45 +1,45 @@
 output "id" {
-  value       = azurerm_private_dns_zone.dns.id
+  value       = azurerm_private_dns_zone.pdz.id
   description = "The Private DNS Zone ID."
 }
 
 output "name" {
-  value       = azurerm_private_dns_zone.dns.name
+  value       = azurerm_private_dns_zone.pdz.name
   description = "The name of the Private DNS zone."
 }
 
 output "resource_group_name" {
-  value       = azurerm_private_dns_zone.dns.resource_group_name
+  value       = azurerm_private_dns_zone.pdz.resource_group_name
   description = "The name of the resource group in which to create the Private DNS zone."
 }
 
 output "tags" {
-  value       = azurerm_private_dns_zone.dns.tags
+  value       = azurerm_private_dns_zone.pdz.tags
   description = "The tags assigned to the resource."
 }
 
 output "number_of_record_sets" {
-  value       = azurerm_private_dns_zone.dns.number_of_record_sets
+  value       = azurerm_private_dns_zone.pdz.number_of_record_sets
   description = "The current number of record sets in this Private DNS zone."
 }
 
 output "max_number_of_record_sets" {
-  value       = azurerm_private_dns_zone.dns.max_number_of_record_sets
+  value       = azurerm_private_dns_zone.pdz.max_number_of_record_sets
   description = "The maximum number of record sets that can be created in this Private DNS zone."
 }
 
 output "max_number_of_virtual_network_links" {
-  value       = azurerm_private_dns_zone.dns.max_number_of_virtual_network_links
+  value       = azurerm_private_dns_zone.pdz.max_number_of_virtual_network_links
   description = "The maximum number of virtual networks that can be linked to this Private DNS zone."
 }
 
 output "max_number_of_virtual_network_links_with_registration" {
-  value       = azurerm_private_dns_zone.dns.max_number_of_virtual_network_links_with_registration
+  value       = azurerm_private_dns_zone.pdz.max_number_of_virtual_network_links_with_registration
   description = "The maximum number of virtual networks that can be linked to this Private DNS zone with registration enabled."
 }
 
 output "soa_record" {
-  value       = azurerm_private_dns_zone.dns.soa_record
+  value       = azurerm_private_dns_zone.pdz.soa_record
   description = "Block containing configuration of SOA record."
 }
 

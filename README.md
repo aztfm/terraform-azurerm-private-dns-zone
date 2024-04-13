@@ -69,7 +69,7 @@ The `cname_records` supports the following:
 |name||`string`|n/a|yes|
 |tags||`map(string)`|`null`|no|
 |ttl||`number`|n/a|yes|
-|records||`string`|n/a|yes|
+|record||`string`|n/a|yes|
 
 The `mx_records` supports the following:
 
