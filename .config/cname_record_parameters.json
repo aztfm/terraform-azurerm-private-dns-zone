@@ -24,7 +24,7 @@
         "Support": []
     },
     {
-        "Name": "records",
+        "Name": "record",
         "Description": "",
         "Type": "string",
         "Default": "n/a",
