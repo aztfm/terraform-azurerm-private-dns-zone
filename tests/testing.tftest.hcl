@@ -73,7 +73,7 @@ run "plan" {
   }
 
   ##### REGISTRO SOA
-  
+
   assert {
     condition     = azurerm_private_dns_zone.pdz.soa_record[0].email == var.soa_record.email
     error_message = ""
@@ -439,11 +439,25 @@ run "plan" {
   }
 }
 
-// run "apply" {
-//   command = apply
+run "apply" {
+  command = apply
 
-//   variables {
-//     name                = "${run.setup.workspace_id}.com"
-//     resource_group_name = run.setup.resource_group_name
-//   }
-// }
+  variables {
+    name                = "${run.setup.workspace_id}.com"
+    resource_group_name = run.setup.resource_group_name
+    virtual_network_links = [
+      { name = "${run.setup.workspace_id}1", virtual_network_id = run.setup.virtual_network_id_1, registration_enabled = true },
+      { name = "${run.setup.workspace_id}2", virtual_network_id = run.setup.virtual_network_id_2 },
+    ]
+  }
+
+  assert {
+    condition     = azurerm_private_dns_zone_virtual_network_link.links["${run.setup.workspace_id}1"].virtual_network_id == run.setup.virtual_network_id_1
+    error_message = ""
+  }
+
+  assert {
+    condition     = azurerm_private_dns_zone_virtual_network_link.links["${run.setup.workspace_id}2"].virtual_network_id == run.setup.virtual_network_id_2
+    error_message = ""
+  }
+}
