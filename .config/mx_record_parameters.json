@@ -1,0 +1,34 @@
+[
+    {
+        "Name": "name",
+        "Description": "",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "tags",
+        "Description": "",
+        "Type": "map(string)",
+        "Default": "null",
+        "Required": "no",
+        "Support": []
+    },
+    {
+        "Name": "ttl",
+        "Description": "",
+        "Type": "number",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "records",
+        "Description": "",
+        "Type": "list(object({}))",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    }
+]

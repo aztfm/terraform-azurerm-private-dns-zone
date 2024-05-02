@@ -1,0 +1,18 @@
+[
+    {
+        "Name": "preference",
+        "Description": "",
+        "Type": "number",
+        "Default": "n/a",
+        "Required": "yes",
+        "Support": []
+    },
+    {
+        "Name": "exchange",
+        "Description": "",
+        "Type": "string",
+        "Default": "n/a",
+        "Required": "no",
+        "Support": []
+    }
+]
