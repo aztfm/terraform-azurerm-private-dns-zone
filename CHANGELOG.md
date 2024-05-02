@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 -->
 
-## 1.0.0 (XXXXXX ##, 2024)
+## 1.0.0 (May 02, 2024)
 
 FEATURES:
 
