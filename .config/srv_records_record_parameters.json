@@ -1,7 +1,7 @@
 [
     {
         "Name": "priority",
-        "Description": "",
+        "Description": "The priority of the SRV record.",
         "Type": "number",
         "Default": "n/a",
         "Required": "yes",
@@ -9,7 +9,7 @@
     },
     {
         "Name": "weight",
-        "Description": "",
+        "Description": "The Weight of the SRV record.",
         "Type": "number",
         "Default": "n/a",
         "Required": "no",
@@ -17,7 +17,7 @@
     },
     {
         "Name": "port",
-        "Description": "",
+        "Description": "The Port the service is listening on.",
         "Type": "number",
         "Default": "n/a",
         "Required": "yes",
@@ -25,7 +25,7 @@
     },
     {
         "Name": "target",
-        "Description": "",
+        "Description": "The FQDN of the service.",
         "Type": "string",
         "Default": "n/a",
         "Required": "yes",
