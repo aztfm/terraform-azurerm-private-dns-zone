@@ -1,5 +1,11 @@
 <!-- markdownlint-disable MD041 -->
 
+## 1.0.1 (May 04, 2024)
+
+ENHANCEMENTS:
+
+- Add pending documentation for some parameters.
+
 ## 1.0.0 (May 02, 2024)
 
 FEATURES:
