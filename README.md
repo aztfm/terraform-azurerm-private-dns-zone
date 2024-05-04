@@ -36,101 +36,101 @@ The `soa_record` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|email||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|expire\_time||`number`|`null`|no|
-|minimum\_ttl||`number`|`null`|no|
-|refresh\_time||`number`|`null`|no|
-|retry\_time||`number`|`null`|no|
-|ttl||`number`|`null`|no|
+|email|The email contact for the SOA record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the Record Set.|`map(string)`|`null`|no|
+|expire\_time|The expire time for the SOA record.|`number`|`null`|no|
+|minimum\_ttl|The minimum Time To Live for the SOA record.|`number`|`null`|no|
+|refresh\_time|The refresh time for the SOA record.|`number`|`null`|no|
+|retry\_time|The retry time for the SOA record.|`number`|`null`|no|
+|ttl|The Time To Live of the SOA Record in seconds.|`number`|`null`|no|
 
 The `a_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|records||`list(string)`|n/a|yes|
+|name|The name of the DNS A Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds.|`number`|n/a|yes|
+|records|List of IPv4 Addresses.|`list(string)`|n/a|yes|
 
 The `aaaa_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|records||`list(string)`|n/a|yes|
+|name|The name of the DNS AAAA Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds.|`number`|n/a|yes|
+|records|A list of IPv6 Addresses.|`list(string)`|n/a|yes|
 
 The `cname_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|record||`string`|n/a|yes|
+|name|The name of the DNS CNAME Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds.|`number`|n/a|yes|
+|record|The target of the CNAME.|`string`|n/a|yes|
 
 The `mx_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|records||`list(object({}))`|n/a|yes|
+|name|The name of the DNS MX Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds.|`number`|n/a|yes|
+|records|A list of values that make up the MX record.|`list(object({}))`|n/a|yes|
 
 The `mx_records.records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|preference||`number`|n/a|yes|
-|exchange||`string`|n/a|no|
+|preference|The preference of the MX record.|`number`|n/a|yes|
+|exchange|The FQDN of the exchange to MX record points to.|`string`|n/a|no|
 
 The `ptr_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|records||`list(string)`|n/a|yes|
+|name|The name of the DNS PTR Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds.|`number`|n/a|yes|
+|records|List of Fully Qualified Domain Names.|`list(string)`|n/a|yes|
 
 The `srv_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|records||`list(object({})`|n/a|yes|
+|name|The name of the DNS SRV Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds|`number`|n/a|yes|
+|records|A list of values that make up the SRV record.|`list(object({})`|n/a|yes|
 
 The `srv_records.records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|priority||`number`|n/a|yes|
-|weight||`number`|n/a|no|
-|port||`number`|n/a|yes|
-|target||`string`|n/a|yes|
+|priority|The priority of the SRV record.|`number`|n/a|yes|
+|weight|The Weight of the SRV record.|`number`|n/a|no|
+|port|The Port the service is listening on.|`number`|n/a|yes|
+|target|The FQDN of the service.|`string`|n/a|yes|
 
 The `txt_records` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|tags||`map(string)`|`null`|no|
-|ttl||`number`|n/a|yes|
-|records||`list(string)`|n/a|yes|
+|name|The name of the DNS TXT Record.|`string`|n/a|yes|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|ttl|The Time To Live (TTL) of the DNS record in seconds.|`number`|n/a|yes|
+|records|A list of values that make up the txt record.|`list(string)`|n/a|yes|
 
 The `virtual_network_links` supports the following:
 
 | Name | Description | Type | Default | Required |
 | ---- | ------------| :--: | :-----: | :------: |
-|name||`string`|n/a|yes|
-|virtual\_network\_id||`string`|n/a|no|
-|tags||`map(string)`|`null`|no|
-|registration\_enabled||`list(string)`|`false`|no|
+|name|The name of the Private DNS Zone Virtual Network Link.|`string`|n/a|yes|
+|virtual\_network\_id|The ID of the Virtual Network that should be linked to the DNS Zone.|`string`|n/a|no|
+|tags|A mapping of tags to assign to the resource.|`map(string)`|`null`|no|
+|registration\_enabled|Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?|`list(string)`|`false`|no|
 
 ## Outputs
 

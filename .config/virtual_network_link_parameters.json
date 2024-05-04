@@ -1,7 +1,7 @@
 [
     {
         "Name": "name",
-        "Description": "",
+        "Description": "The name of the Private DNS Zone Virtual Network Link.",
         "Type": "string",
         "Default": "n/a",
         "Required": "yes",
@@ -9,7 +9,7 @@
     },
     {
         "Name": "virtual_network_id",
-        "Description": "",
+        "Description": "The ID of the Virtual Network that should be linked to the DNS Zone.",
         "Type": "string",
         "Default": "n/a",
         "Required": "no",
@@ -17,7 +17,7 @@
     },
     {
         "Name": "tags",
-        "Description": "",
+        "Description": "A mapping of tags to assign to the resource.",
         "Type": "map(string)",
         "Default": "null",
         "Required": "no",
@@ -25,7 +25,7 @@
     },
     {
         "Name": "registration_enabled",
-        "Description": "",
+        "Description": "Is auto-registration of virtual machine records in the virtual network in the Private DNS zone enabled?",
         "Type": "list(string)",
         "Default": "false",
         "Required": "no",

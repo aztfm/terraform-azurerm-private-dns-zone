@@ -1,7 +1,7 @@
 [
     {
         "Name": "email",
-        "Description": "",
+        "Description": "The email contact for the SOA record.",
         "Type": "string",
         "Default": "n/a",
         "Required": "yes",
@@ -9,7 +9,7 @@
     },
     {
         "Name": "tags",
-        "Description": "",
+        "Description": "A mapping of tags to assign to the Record Set.",
         "Type": "map(string)",
         "Default": "null",
         "Required": "no",
@@ -17,7 +17,7 @@
     },
     {
         "Name": "expire_time",
-        "Description": "",
+        "Description": "The expire time for the SOA record.",
         "Type": "number",
         "Default": "null",
         "Required": "no",
@@ -25,7 +25,7 @@
     },
     {
         "Name": "minimum_ttl",
-        "Description": "",
+        "Description": "The minimum Time To Live for the SOA record.",
         "Type": "number",
         "Default": "null",
         "Required": "no",
@@ -33,7 +33,7 @@
     },
     {
         "Name": "refresh_time",
-        "Description": "",
+        "Description": "The refresh time for the SOA record.",
         "Type": "number",
         "Default": "null",
         "Required": "no",
@@ -41,7 +41,7 @@
     },
     {
         "Name": "retry_time",
-        "Description": "",
+        "Description": "The retry time for the SOA record.",
         "Type": "number",
         "Default": "null",
         "Required": "no",
@@ -49,7 +49,7 @@
     },
     {
         "Name": "ttl",
-        "Description": "",
+        "Description": "The Time To Live of the SOA Record in seconds.",
         "Type": "number",
         "Default": "null",
         "Required": "no",

@@ -1,7 +1,7 @@
 [
     {
         "Name": "preference",
-        "Description": "",
+        "Description": "The preference of the MX record.",
         "Type": "number",
         "Default": "n/a",
         "Required": "yes",
@@ -9,7 +9,7 @@
     },
     {
         "Name": "exchange",
-        "Description": "",
+        "Description": "The FQDN of the exchange to MX record points to.",
         "Type": "string",
         "Default": "n/a",
         "Required": "no",
